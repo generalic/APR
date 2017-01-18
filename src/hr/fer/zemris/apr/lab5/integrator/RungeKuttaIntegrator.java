@@ -13,8 +13,8 @@ public class RungeKuttaIntegrator extends AbstractIntegrator {
     @Override
     protected Matrix calculate(Matrix xK) {
         Matrix m1 = A.multiply(xK);
-        Matrix m2 = A.multiply(xK.add(m1.multiply(T).multiply(0.5)));
-        Matrix m3 = A.multiply(xK.add(m2.multiply(T).multiply(0.5)));
+        Matrix m2 = A.multiply(xK.add(m1.multiply(T * 0.5)));
+        Matrix m3 = A.multiply(xK.add(m2.multiply(T * 0.5)));
         Matrix m4 = A.multiply(xK.add(m3.multiply(T)));
 
         return xK.add(m1.add(m2.multiply(2)).add(m3.multiply(2)).add(m4).multiply(T / 6));

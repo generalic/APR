@@ -41,9 +41,7 @@ public abstract class AbstractIntegrator implements IIntegrator {
             xK = calculate(xK);
             t += T;
 
-            System.out.println(t);
-            System.out.println(xK);
-            System.out.println();
+            System.out.println(String.format("%.1f", t) + " | " + xK);
 
             ts.add(t);
             x1s.add(xK.get(0, 0));
